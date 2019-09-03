@@ -26,7 +26,7 @@ if (command === 'add') {
         console.log('Заметка найдена');
         notes.logNote(note);
     } else {
-        console.log('Заметка не найдена');
+        console.log('Заметка  об не найдена');
     }
 } else if (command === 'remove'){
     var noteRemoved = notes.removeNote(argv.title);
