@@ -30,7 +30,7 @@ if (command === 'add') {
     }
 } else if (command === 'remove'){
     var noteRemoved = notes.removeNote(argv.title);
-    var message = noteRemoved ? 'Заметка об этом была удалена' : 'Заметка не найдена';
+    var message = noteRemoved ? 'Заметка была удалена' : 'Заметка не найдена';
     console.log(message);
 } else {
     console.log('Команда не распознана');
