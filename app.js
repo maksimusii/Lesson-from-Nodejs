@@ -4,19 +4,27 @@ const _ = require('loadsh');
 const yargs = require ('yargs');
 
 const notes = require('./notes.js');
-
-const argv = yargs
-.command('add', 'Добавить новую заметку', {
-title: {
+const titleOptions = {
     describe: 'Название заметки',
     demand: true,
     alias: 't'
-},
-body: {
-    describe: "Текст заметки",
+};
+const bodyOptions = {
+    describe: 'Текст заметки',
     demand: true,
     alias: 'b'
 }
+const argv = yargs
+.command('add', 'Добавить новую заметку', {
+title: titleOptions,
+body: bodyOptions
+})
+.command('list', 'Список всех заметок')
+.command('read', 'Читать заметку', {
+    title: titleOptions
+})
+.command('remove', 'Удалить заметку',{
+    title: titleOptions
 })
 .help()
 .argv;
